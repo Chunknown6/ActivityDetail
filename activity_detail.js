@@ -49,12 +49,11 @@ var app = new Vue({
             const time         = document.getElementById('activityLotteryStrattime');
             const lotteryCodes = document.getElementById('lotteryCodes');
 //            const activityDetailUrl = 'https://randomuser.me/api/?results=10';
-            const activityDetailUrl = 'http://localhost:3000/activity_detail';
+            const activityDetailUrl = 'http://10.241.178.110:3000/activity_detail';
             var that = this;
 //            $.ajax({
 //                type: "GET",
 //                url: activityDetailUrl,
-//                data: null,
 //                dataType: "json",
 //                success: function(result){
 //                    if(result.code === 200){
@@ -87,8 +86,15 @@ var app = new Vue({
 //                    }
 //                }
 //            });
-             fetch(activityDetailUrl)
-                 .then((resp) => resp.json())
+             fetch(activityDetailUrl,{
+                    headers:{
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    }
+                })
+                 .then(function(resp){
+                     return resp.json();
+                 })
                  .then(function(result) {
                      if(result.code === 200){
                          let data = result.data;
