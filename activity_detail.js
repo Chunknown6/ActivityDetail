@@ -49,7 +49,7 @@ var app = new Vue({
             const time         = document.getElementById('activityLotteryStrattime');
             const lotteryCodes = document.getElementById('lotteryCodes');
 //            const activityDetailUrl = 'https://randomuser.me/api/?results=10';
-            const activityDetailUrl = 'http://10.241.178.110:3000/activity_detail';
+            const activityDetailUrl = 'https://10.241.178.110:3000/activity_detail';
             var that = this;
 //            $.ajax({
 //                type: "GET",
