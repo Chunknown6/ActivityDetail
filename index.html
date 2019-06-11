@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewpoint" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <title>活动详情</title>
+        <link rel="stylesheet" type="text/css" href="activity_detail.css">
+        <script type="text/javascript" src="vue.min.js"></script>
+        <script type="text/javascript" src="jquery-3.0.0.min.js"></script>
+    </head>
+
+    <body>
+        <div class="main">
+            <div class="detail">
+                <div class="banner">
+                    <img id="activityImage" class="activityImage" alt="加载中..."/>
+                    <span><img src="backwards.png" class="backwards" onclick="window.hello.backwards()"/></span>
+                </div>
+                <div class="infomation">
+                    <div class="activityTitle" id="activityTitle"></div>
+                    <div class="activityDescription" id="activityDescription"></div>
+                </div>
+            </div>
+            <div class="status">
+                <div v-show="joined"   class="joinStatus joined">已参与</div>
+                <div v-show="unjoined" class="joinStatus unjoined">未参与</div>
+                <div class="activityLotteryStrattime" id="activityLotteryStrattime"></div>
+                <div class="codeList"><samp id="lotteryCodes"></samp></div>
+            </div>
+        
+            <div class="bottom">
+                    <div class="price">
+                        <div class="priceText">
+                            <div class="flag"><samp>￥</samp></div>
+                            <div class="amount"><samp class="buyAmount" id="buyAmount">{{buyAmount}}</samp></div>
+                        </div>
+                    </div>
+                    <div class="buy" onclick="window.hello.goToBuy()" @click="goToBuy" id="buy">
+                        <p class="buyButton">立即购买</p>
+                    </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="activity_detail.js"></script>
+    </body>
+</html>
